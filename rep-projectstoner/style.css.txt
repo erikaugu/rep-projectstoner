@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+}
+header {
+  background: #222;
+  padding: 2rem;
+  text-align: center;
+}
+section {
+  padding: 3rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+section img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+audio {
+  display: block;
+  margin: 1rem auto;
+}

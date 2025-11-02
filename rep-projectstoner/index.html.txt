@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Replokalen 🎸</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Replokalen</h1></header>
+  <main id="reps"></main>
+
+  <script>
+    fetch('/reps.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('reps');
+        data.forEach(rep => {
+          const section = document.createElement('section');
+          section.innerHTML = `
+            <img src="${rep.image}" alt="${rep.date}">
+            <h2>${rep.date}</h2>
+            ${rep.tracks.map(t => `<audio controls src="${t.url}"></audio>`).join('')}
+          `;
+          container.appendChild(section);
+        });
+      });
+  </script>
+</body>
+</html>
